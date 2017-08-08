@@ -1,0 +1,46 @@
+{
+  "name": "proxy-experiment",
+  "version": "1.0.0",
+  "description": "Experiment with koa &amp; http-proxy and docker containers",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc --project ./src/tsconfig.app.json",
+    "start": "ts-node --project ./src/tsconfig.app.json src/app.ts",
+    "start:cluster": "pm2 start src/app.ts -i 0 --name proxy",
+    "stop:cluster": "pm2 stop proxy",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lizardruss/proxy-experiment.git"
+  },
+  "keywords": [
+    "Koa",
+    "Proxy"
+  ],
+  "author": "Russell Centanni",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lizardruss/proxy-experiment/issues"
+  },
+  "homepage": "https://github.com/lizardruss/proxy-experiment#readme",
+  "devDependencies": {
+    "ts-node": "^3.3.0",
+    "tsconfig-paths": "^2.2.0",
+    "typescript": "^2.4.2"
+  },
+  "dependencies": {
+    "@types/http-proxy": "^1.12.0",
+    "@types/koa": "^2.0.39",
+    "@types/koa-bodyparser": "^3.0.23",
+    "@types/koa-passport": "^2.0.4",
+    "@types/koa-session": "^3.0.1",
+    "@types/passport": "^0.3.3",
+    "http-proxy": "^1.16.2",
+    "koa": "^2.3.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-passport": "^3.0.0",
+    "koa-session": "^5.4.0",
+    "passport": "^0.3.2"
+  }
+}
